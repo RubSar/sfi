@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>title</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="/img/favicon.ico" rel="icon" type="image/x-icon"/>
+    <link rel="stylesheet" href='/lib/bootstrap/dist/css/bootstrap.css'>
+    <link rel='stylesheet' href='/stylesheets/header.css'/>
+    <link rel='stylesheet' href='/stylesheets/style.css'/>
+</head>
+<body>
+<% include partials/header.ejs %>
+
+<section>
+    <div class="container">
+        <div class="text-center">
+            <h2>We found some coincidence of Your request if you find out it in below, continue with it</h2>
+        </div>
+        <div class="form-group center-block">
+            <form class="form-inline" action="/lastStep/<%= target %>" method="get">
+                <label for="target">Continue as new</label>
+                <input type="text" name="target" id="target" class="form-control" value="<%= target %>"/>
+
+                <button type="submit" class="btn btn-primary">SFI</button>
+
+            </form>
+        </div>
+
+        <div class="panel-group" id="accordion" style="text-align:left">
+            <% coincidence.forEach(function(item){ %>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-md-9 col-sm-9">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse-<%= item._id %>"
+                                   aria-expanded="false" class="collapsed">
+                                    <i class="fa fa-bars"></i> <%= item.name %>
+                                </a>
+                            </h4>
+                        </div>
+                        <div class="col-md-2 col-sm-2">
+                            <div class="pull-right">
+                                <a href="/to/<%=item.name%>" class="btn btn-primary">SFI</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="collapse-<%= item._id %>" class="panel-collapse collapse" aria-expanded="false">
+                    <div class="panel-body">
+                        <h4>Also known as </h4>
+
+                        <p>Anasun kendanineri tagavor</p>
+
+                        <p>Anasun kendanineri tagavor</p>
+                    </div>
+                </div>
+            </div>
+            <% }) %>
+        </div>
+
+    </div>
+</section>
+
+
+<script type="text/javascript" src="/lib/jquery/dist/jquery.js"></script>
+<script type="text/javascript" src="/lib/bootstrap/dist/js/bootstrap.js"></script>
+<script type="text/javascript">
+    $(function () {
+//        $.get({
+//            url:'/api/tags'
+//        })
+    });
+</script>
+</body>
+</html>

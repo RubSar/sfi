@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="/img/favicon.ico" rel="icon" type="image/x-icon"/>
+    <link rel="stylesheet" href='/lib/bootstrap/dist/css/bootstrap.css'>
+    <link rel='stylesheet' href='/stylesheets/header.css'/>
+    <link rel='stylesheet' href='/stylesheets/style.css'/>
+</head>
+<body>
+<% include partials/header.ejs %>
+<section class="sfi">
+    <div class="container">
+        <div class="text-center">
+            <h2>Welcome to JSFI and Relax</h2>
+
+            <form class="form-inline" action="/sfi/create" method="post">
+                <div class="form-group mx-sm-3">
+                    <input type="text" class="form-control" name="target" placeholder="Someone or Something">
+                </div>
+                <button type="submit" class="btn btn-primary">JSFI</button>
+            </form>
+        </div>
+
+    </div>
+</section>
+<section class="most-popular">
+    <div class="text-center">
+        <h2>Most Popular </h2>
+
+        <div class="row">
+            <div class="col-md-4">
+                <p>Lorem ipsum</p>
+            </div>
+            <div class="col-md-4">
+                <p>Lorem ipsum</p>
+            </div>
+            <div class="col-md-4">
+                <p>Lorem ipsum</p>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="most-popular-tags">
+   <div class="container">
+       <div class="text-center">
+           <h2>Most Popular Tags</h2>
+
+           <div class="text-center">
+               <ul class="nav nav-tabs tags-nav">
+                   <% topTags.forEach(function(tag){ %>
+                   <li>
+                       <a href="#">
+                           <%=tag.name%>
+                       </a>
+                   </li>
+                   <% }); %>
+
+               </ul>
+           </div>
+
+           <div class="bg-white rated-box">
+               <div class="lazy-load-box-s">
+                   <i class="fa fa-spin fa-cog fa-5x"></i>
+               </div>
+               <div class="rated-items">
+                   <div class="row form-group" ng-repeat="row in characters track by $index">
+                       <div class="col-md-3 col-sm-3 text-center mb-xs-15"
+                            ng-repeat="character in row track by character._id">
+                           text
+
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </div>
+</section>
+<script type="text/javascript" src="/lib/jquery/dist/jquery.js"></script>
+<script type="text/javascript" src="/lib/bootstrap/dist/js/bootstrap.js"></script>
+<script type="text/javascript">
+    $(function () {
+//        $.get({
+//            url:'/api/tags'
+//        })
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="/img/favicon.ico" rel="icon" type="image/x-icon"/>
+    <link rel="stylesheet" href='/lib/bootstrap/dist/css/bootstrap.css'>
+    <link rel='stylesheet' href='/stylesheets/header.css'/>
+    <link rel='stylesheet' href='/stylesheets/style.css'/>
+</head>
+<body>
+<% include partials/header.ejs %>
+<section class="target">
+    <div class="container">
+       <div style="padding: 60px">
+           <div class="row">
+               <div class="col-md-8">
+                   <h2>Someone bad man</h2>
+               </div>
+               <div class="col-md-4">
+                   <button type="button" class="btn btn-primary">SFI or un Sfi</button>
+               </div>
+           </div>
+       </div>
+
+    </div>
+</section>
+
+<section class="most-popular-tags">
+    <div class="container">
+        <div class="text-center">
+            <h2>Most Popular Tags</h2>
+
+
+        </div>
+    </div>
+</section>
+<script type="text/javascript" src="/lib/jquery/dist/jquery.js"></script>
+<script type="text/javascript" src="/lib/bootstrap/dist/js/bootstrap.js"></script>
+<script type="text/javascript">
+    $(function () {
+//        $.get({
+//            url:'/api/tags'
+//        })
+    });
+</script>
+</body>
+</html>
